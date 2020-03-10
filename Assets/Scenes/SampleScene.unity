@@ -870,7 +870,7 @@ PrefabInstance:
     - target: {fileID: 5711418805817486873, guid: 6e768ae492a90451a801a9347aed26d1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5711418805817486873, guid: 6e768ae492a90451a801a9347aed26d1,
         type: 3}
@@ -916,6 +916,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tama
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711418805817486875, guid: 6e768ae492a90451a801a9347aed26d1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e768ae492a90451a801a9347aed26d1, type: 3}
