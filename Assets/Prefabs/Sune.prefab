@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 661780314702654192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.3, y: 0.79, z: -0.9968415}
-  m_LocalScale: {x: 0.95321, y: 0.95321, z: 0.95321}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 661780315867554441}
   - {fileID: 661780314817313426}
@@ -76,8 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2850784893539704797, guid: 1e3cdcde89894f14599f17f877fa8e78,
-    type: 3}
+  m_Sprite: {fileID: 478985056507175695, guid: 1e3cdcde89894f14599f17f877fa8e78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +96,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 661780314702654192}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 82a034c4cba5449c7a90c2993d1e2dcb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -147,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6bf465efc80e14197ec274eb2392a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 200
+  m_JumpForce: 300
   m_MovementSmoothing: 0.05
   m_AirControl: 0
   m_WhatIsGround:
@@ -167,7 +166,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 661780314702654192}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 82a034c4cba5449c7a90c2993d1e2dcb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -187,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 661780314702654187}
-  runSpeed: 10
+  runSpeed: 12
 --- !u!1 &661780314817313437
 GameObject:
   m_ObjectHideFlags: 0

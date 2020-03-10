@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FoxMovement : MonoBehaviour
+public class EggMovement : MonoBehaviour
 {
-    public FoxController controller;
+    public EggController controller;
     public float runSpeed = 20f;
 
     float horizontalMove = 0f;
@@ -14,9 +14,9 @@ public class FoxMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("HorizontalFox") * runSpeed;
+        horizontalMove = Input.GetAxisRaw("HorizontalEgg") * runSpeed;
 
-        if (Input.GetButtonDown("JumpFox"))
+        if (Input.GetButtonDown("JumpEgg"))
         {
             jump = true;
         }
