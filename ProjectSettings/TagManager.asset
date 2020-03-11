@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Sune Tama
   layers:
   - Default
   - TransparentFX
@@ -38,6 +39,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2274863069
+    locked: 0
+  - name: Middleground
+    uniqueID: 960374975
+    locked: 0
+  - name: Foreground
+    uniqueID: 3640352659
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Interactables
+    uniqueID: 290359847
+    locked: 0
+  - name: Sune Tama
+    uniqueID: 36893785
     locked: 0
