@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6bf465efc80e14197ec274eb2392a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 300
+  m_JumpForce: 550
   m_MovementSmoothing: 0.05
   m_AirControl: 0
   m_WhatIsGround:
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 661780314702654187}
-  runSpeed: 12
+  runSpeed: 22
 --- !u!1 &661780314817313437
 GameObject:
   m_ObjectHideFlags: 0
