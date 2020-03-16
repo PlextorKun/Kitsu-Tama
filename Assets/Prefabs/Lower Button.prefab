@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7682341034440407857}
   - component: {fileID: 5116795486578649103}
   m_Layer: 0
-  m_Name: Button
-  m_TagString: Untagged
+  m_Name: Lower Button
+  m_TagString: Moving
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

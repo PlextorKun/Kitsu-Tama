@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5587868882709851213}
   - component: {fileID: 5587868882709851212}
   m_Layer: 0
-  m_Name: Upper World
+  m_Name: Upper Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
