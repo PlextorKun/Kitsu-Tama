@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
+using System.Collections.Generic;
+using System;
 
 public class FoxController : MonoBehaviour
 {
@@ -18,6 +21,9 @@ public class FoxController : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+
+	private bool portaling = false;
+	private bool upsideDown = false;
 
 	[Header("Events")]
 	[Space]
@@ -63,6 +69,10 @@ public class FoxController : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
+		if (portaling)
+        {
+			return;
+        }
 		// If crouching, check to see if the character can stand up
 		//if (!crouch)
 		//{
@@ -112,15 +122,23 @@ public class FoxController : MonoBehaviour
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
 			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !m_FacingRight)
+			if (move > 0 && !m_FacingRight && !upsideDown)
 			{
 				// ... flip the player.
 				Flip();
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && m_FacingRight)
+			else if (move < 0 && m_FacingRight && !upsideDown)
 			{
 				// ... flip the player.
+				Flip();
+			}
+			else if (move > 0 && m_FacingRight && upsideDown)
+            {
+				Flip();
+            }
+			else if (move < 0 && !m_FacingRight && upsideDown)
+			{
 				Flip();
 			}
 		}
@@ -128,8 +146,16 @@ public class FoxController : MonoBehaviour
 		if (m_Grounded && jump)
 		{
 			// Add a vertical force to the player.
+			int sign = 0;
+			if (upsideDown)
+            {
+				sign = -1;
+            } else
+            {
+				sign = 1;
+            }
 			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * sign));
 		}
 	}
 
@@ -143,5 +169,41 @@ public class FoxController : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	public void automaticPortal()
+    {
+		StartCoroutine(autoPortal());
+		Debug.Log("starting coroutine");
+    }
+
+	IEnumerator autoPortal()
+    {
+		portaling = true;
+		upsideDown = true;
+
+		m_Rigidbody2D.freezeRotation = true;
+
+
+		Vector3 targetVelocity = new Vector2(2f, m_Rigidbody2D.velocity.y);
+		m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+		yield return new WaitForSeconds(.22f);
+		m_Rigidbody2D.gravityScale *= -1;
+		m_Rigidbody2D.freezeRotation = false;
+
+		transform.Rotate(180, 0, 0, Space.Self);
+
+
+		targetVelocity = new Vector2(5f, m_Rigidbody2D.velocity.y);
+		m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+
+		Debug.Log("flipping gravity");
+		yield return new WaitUntil(() => m_Grounded == true);
+
+		m_Rigidbody2D.velocity = new Vector2(0, 0);
+
+		portaling = false;
 	}
 }
