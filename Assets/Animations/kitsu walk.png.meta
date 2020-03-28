@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 6ce0dabd39368164b9791e65cdfdc398
+guid: fab725ce7d60129498a15b7f0de398b2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4493590007624933022
-    second: wisp_0
+      213: -584570906469798795
+    second: kitsu walk_0
   - first:
-      213: -2352390107420059059
-    second: wisp_1
+      213: -923662441272101701
+    second: kitsu walk_1
   - first:
-      213: -8023877839763048758
-    second: wisp_2
+      213: 4939246273398091076
+    second: kitsu walk_2
+  - first:
+      213: -7348921639356517077
+    second: kitsu walk_3
+  - first:
+      213: 4490591534097807033
+    second: kitsu walk_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -95,7 +101,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wisp_0
+      name: kitsu walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316ff36abdc0d7941928cdabd681667f
+      internalID: -584570906469798795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitsu walk_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e43aee19d0f7246b49d95c22c6c53e
+      internalID: -923662441272101701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitsu walk_2
       rect:
         serializedVersion: 2
         x: 0
@@ -109,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b28608982c3e09c429acf8b421d0f5ca
-      internalID: -4493590007624933022
+      spriteID: 60e81d5fcc6841a43a91a14f4f5af8fb
+      internalID: 4939246273398091076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wisp_1
+      name: kitsu walk_3
       rect:
         serializedVersion: 2
         x: 64
@@ -130,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e129c27f019d149865f37c1a0f019f
-      internalID: -2352390107420059059
+      spriteID: d1f86717f4f1c904bbd7f9081fbf5c5c
+      internalID: -7348921639356517077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wisp_2
+      name: kitsu walk_4
       rect:
         serializedVersion: 2
         x: 0
@@ -151,8 +199,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be081310611021144a63317b1a397879
-      internalID: -8023877839763048758
+      spriteID: 02f38361d43d6694c876ef7d24632c3b
+      internalID: 4490591534097807033
       vertices: []
       indices: 
       edges: []

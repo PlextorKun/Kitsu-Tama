@@ -1,16 +1,28 @@
 fileFormatVersion: 2
-guid: 6ce0dabd39368164b9791e65cdfdc398
+guid: dea142664af94cf459d65197a5c11b58
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4493590007624933022
-    second: wisp_0
+      213: -1980185380729919960
+    second: tama walk_0
   - first:
-      213: -2352390107420059059
-    second: wisp_1
+      213: 1862705529605575767
+    second: tama walk_1
   - first:
-      213: -8023877839763048758
-    second: wisp_2
+      213: -6624564241206997412
+    second: tama walk_2
+  - first:
+      213: 3048945301408692230
+    second: tama walk_3
+  - first:
+      213: 7558067265347526521
+    second: tama walk_4
+  - first:
+      213: 244815785755571291
+    second: tama walk_5
+  - first:
+      213: 9188193985096353778
+    second: tama walk_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -95,7 +107,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wisp_0
+      name: tama walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6c709b7eff41047ba2113bcb0ceeeb
+      internalID: -1980185380729919960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama walk_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c186b659b333e945a84b5758fab9ef2
+      internalID: 1862705529605575767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama walk_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 783d29cd99a7fe444a41630d1ea34122
+      internalID: -6624564241206997412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama walk_3
       rect:
         serializedVersion: 2
         x: 0
@@ -109,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b28608982c3e09c429acf8b421d0f5ca
-      internalID: -4493590007624933022
+      spriteID: 6fc43e880df9cff45bc85a437f87eb38
+      internalID: 3048945301408692230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wisp_1
+      name: tama walk_4
       rect:
         serializedVersion: 2
         x: 64
@@ -130,14 +205,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e129c27f019d149865f37c1a0f019f
-      internalID: -2352390107420059059
+      spriteID: 7eb4da99e75aaa5478ed3ce779581091
+      internalID: 7558067265347526521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wisp_2
+      name: tama walk_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f826012a54ab6843b313946d2615ff0
+      internalID: 244815785755571291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama walk_6
       rect:
         serializedVersion: 2
         x: 0
@@ -151,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be081310611021144a63317b1a397879
-      internalID: -8023877839763048758
+      spriteID: c07579f76e9a1c54eb50f31768839c77
+      internalID: 9188193985096353778
       vertices: []
       indices: 
       edges: []

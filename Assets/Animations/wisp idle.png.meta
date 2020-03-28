@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 6ce0dabd39368164b9791e65cdfdc398
+guid: 7cc8b5c936b0b4241b3740a0eea41976
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4493590007624933022
-    second: wisp_0
+      213: 6269800916501234883
+    second: wisp idle_0
   - first:
-      213: -2352390107420059059
-    second: wisp_1
+      213: -6350932156193661156
+    second: wisp idle_1
   - first:
-      213: -8023877839763048758
-    second: wisp_2
+      213: 396708876778424996
+    second: wisp idle_2
+  - first:
+      213: -5293353567636069026
+    second: wisp idle_3
+  - first:
+      213: -8264340903577878555
+    second: wisp idle_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -95,7 +101,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wisp_0
+      name: wisp idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bfcfdfcf4f5a244aa490ab1ec4fce2
+      internalID: 6269800916501234883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wisp idle_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15386103aadf41499e55df36d0b58ff
+      internalID: -6350932156193661156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wisp idle_2
       rect:
         serializedVersion: 2
         x: 0
@@ -109,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b28608982c3e09c429acf8b421d0f5ca
-      internalID: -4493590007624933022
+      spriteID: e6836e04012efaf4eab56772097af66d
+      internalID: 396708876778424996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wisp_1
+      name: wisp idle_3
       rect:
         serializedVersion: 2
         x: 64
@@ -130,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e129c27f019d149865f37c1a0f019f
-      internalID: -2352390107420059059
+      spriteID: cd0fbf202f4346d4aa5d1860feb9d404
+      internalID: -5293353567636069026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wisp_2
+      name: wisp idle_4
       rect:
         serializedVersion: 2
         x: 0
@@ -151,8 +199,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be081310611021144a63317b1a397879
-      internalID: -8023877839763048758
+      spriteID: b334bf1e37617b94080885780f2c71de
+      internalID: -8264340903577878555
       vertices: []
       indices: 
       edges: []
