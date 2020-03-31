@@ -54,9 +54,14 @@ public class EnemyMovement : MonoBehaviour
     {
         Debug.Log("hit trigger");
         Debug.Log("will die");
-        Destroy(this.gameObject);
+        Die();
     }
     #endregion
+
+    public void Die()
+    {
+        Destroy(this.gameObject);
+    }
 
     IEnumerator EnemyMoveRight()
     {
