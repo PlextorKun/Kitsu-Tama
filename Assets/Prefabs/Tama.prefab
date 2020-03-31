@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 1071393885}
   - component: {fileID: 1071393883}
   - component: {fileID: 1071393884}
+  - component: {fileID: 1183245562}
   m_Layer: 8
   m_Name: Tama
-  m_TagString: Player
+  m_TagString: Egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 36893785
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7646499646299954822, guid: 145c123d069ec3444bd85f159a68ad47,
+  m_Sprite: {fileID: -921856519668814539, guid: 145c123d069ec3444bd85f159a68ad47,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -147,9 +148,9 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: -2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 82a034c4cba5449c7a90c2993d1e2dcb, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1071393884}
-  runSpeed: 26
+  runSpeed: 15
 --- !u!114 &1071393884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +192,27 @@ MonoBehaviour:
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
+  maxHealth: 10
+  hpSlider: {fileID: 0}
+--- !u!95 &1183245562
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5711418805817486875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27271f0f98269734d8a380e0f8ef5ce8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5780883843739981305
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,29 +33,28 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    #region attack_functions
-    private void Burn()
-    {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 0.2f, Vector2.zero);
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (hit.transform.CompareTag("Player"))
-            {
-                hit.transform.GetComponent<EggController>().TakeDamage(burnDamage);
-                Debug.Log("burned egg");
-            }
-        }
-        Destroy(this.gameObject);
-    }
-
+    #region interact_functions
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("hit trigger");
-        if (collision.transform.CompareTag("Player"))
+        Debug.Log("hit collider");
+        if (collision.transform.CompareTag("Egg"))
         {
-            Debug.Log("will burn");
-            Burn();
+            collision.transform.GetComponent<EggController>().TakeDamage(burnDamage);
+            Debug.Log("burned egg");
         }
+
+        if (collision.transform.CompareTag("Fox"))
+        {
+            //collision.transform.GetComponent<FoxController>().TakeDamage(burnDamage);
+            Debug.Log("burned fox");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("hit trigger");
+        Debug.Log("will die");
+        Destroy(this.gameObject);
     }
     #endregion
 
