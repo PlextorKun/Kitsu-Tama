@@ -28,8 +28,8 @@ public class EggController : MonoBehaviour
 
 
 	#region health_variables
-	public int maxHealth;
-	int currHealth;
+	public float maxHealth;
+	float currHealth;
 	public Slider hpSlider;
 	#endregion
 

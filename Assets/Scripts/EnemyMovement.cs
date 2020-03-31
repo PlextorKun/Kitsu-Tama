@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 other;
     bool moving;
     bool move_right;
+    public int burnDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +33,33 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    #region attack_functions
+    private void Burn()
     {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 0.2f, Vector2.zero);
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.transform.CompareTag("Player"))
+            {
+                hit.transform.GetComponent<EggController>().TakeDamage(burnDamage);
+                Debug.Log("burned egg");
+            }
+        }
         Destroy(this.gameObject);
     }
 
-        IEnumerator EnemyMoveRight()
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("hit trigger");
+        if (collision.transform.CompareTag("Player"))
+        {
+            Debug.Log("will burn");
+            Burn();
+        }
+    }
+    #endregion
+
+    IEnumerator EnemyMoveRight()
     {
         moving = true;
         float elapsedTime = 0;
