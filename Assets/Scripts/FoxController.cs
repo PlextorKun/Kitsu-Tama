@@ -25,6 +25,8 @@ public class FoxController : MonoBehaviour
 	private bool portaling = false;
 	private bool upsideDown = false;
 
+	public float cameraMargin = 10;
+
 	[Header("Events")]
 	[Space]
 
@@ -69,10 +71,23 @@ public class FoxController : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
-		if (portaling)
+		
+		Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+
+		if (screenPos.x < cameraMargin)
+		{
+			transform.position = Camera.main.ScreenToWorldPoint(new Vector2(cameraMargin, screenPos.y));
+		}
+
+		else if (screenPos.x > Screen.width - cameraMargin)
         {
-			return;
+			transform.position = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width - cameraMargin, screenPos.y));
         }
+
+		if (portaling)
+		{
+			return;
+		}
 		// If crouching, check to see if the character can stand up
 		//if (!crouch)
 		//{
@@ -180,7 +195,7 @@ public class FoxController : MonoBehaviour
 	IEnumerator autoPortal()
     {
 		portaling = true;
-		upsideDown = true;
+		upsideDown = !upsideDown;
 
 		m_Rigidbody2D.freezeRotation = true;
 
