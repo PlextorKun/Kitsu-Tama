@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class EggController : MonoBehaviour
@@ -22,8 +23,16 @@ public class EggController : MonoBehaviour
 
 	public UnityEvent OnLandEvent;
 
-	[System.Serializable]
+    [System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
+
+
+	#region health_variables
+	public int maxHealth;
+	int currHealth;
+	public Slider hpSlider;
+	#endregion
+
 
 	private void Awake()
 	{
@@ -31,9 +40,12 @@ public class EggController : MonoBehaviour
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
+
+		currHealth = maxHealth;
+		hpSlider.value = currHealth / maxHealth;
 	}
 
-	private void FixedUpdate()
+    private void FixedUpdate()
 	{
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
@@ -52,6 +64,29 @@ public class EggController : MonoBehaviour
 		}
 	}
 
+    #region health_functions
+    public void TakeDamage(int value)
+    {
+		currHealth -= value;
+		hpSlider.value = currHealth / maxHealth;
+		if (currHealth <= 0)
+		{
+			Die();
+		}
+	}
+
+	public void Heal(int value)
+	{
+		currHealth += value;
+		currHealth = Mathf.Min(currHealth, maxHealth);
+		hpSlider.value = currHealth / maxHealth;
+	}
+
+	public void Die()
+	{
+		GameMaster.KillEgg(this);
+	}
+	#endregion
 
 	public void Move(float move, bool crouch, bool jump)
 	{
