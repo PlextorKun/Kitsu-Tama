@@ -25,6 +25,8 @@ public class FoxController : MonoBehaviour
 	private bool portaling = false;
 	private bool upsideDown = false;
 
+	public float cameraMargin = 10;
+
 	[Header("Events")]
 	[Space]
 
@@ -64,15 +66,17 @@ public class FoxController : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
+
 	}
 
 
 	public void Move(float move, bool crouch, bool jump)
 	{
+
 		if (portaling)
-        {
+		{
 			return;
-        }
+		}
 		// If crouching, check to see if the character can stand up
 		//if (!crouch)
 		//{
@@ -180,7 +184,7 @@ public class FoxController : MonoBehaviour
 	IEnumerator autoPortal()
     {
 		portaling = true;
-		upsideDown = true;
+		upsideDown = !upsideDown;
 
 		m_Rigidbody2D.freezeRotation = true;
 

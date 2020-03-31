@@ -7,32 +7,34 @@ public class CameraFollow : MonoBehaviour
     public List<Transform> targets;
 
     public Vector3 offset;
+
+    private void Awake()
+    {
+        float centerX = GetMinPlayer();
+        transform.position = new Vector3(centerX, transform.position.y, transform.position.z);
+    }
     private void LateUpdate()
     {
-        if (targets.Count == 1)
+        float centerX = GetMinPlayer();
+
+        if (transform.position.x <= centerX)
         {
-            return;
+            Vector3 newPos = new Vector3(centerX, transform.position.y, transform.position.z);
+            transform.position = newPos;
         }
 
-        Vector3 centerPoint = GetCenterPoint();
-
-        Vector3 newPosition = centerPoint + offset;
-
-        transform.position = newPosition;
     }
 
-    Vector3 GetCenterPoint()
+    private float GetMinPlayer()
     {
-        if (targets.Count == 1)
+        float min = targets[0].position.x;
+        for (int i = 1; i < targets.Capacity; i++)
         {
-            return targets[0].position;
+            if (targets[i].position.x < min)
+            {
+                min = targets[i].position.x;
+            }
         }
-
-        var bounds = new Bounds(targets[0].position, Vector3.zero);
-        for (int index = 0; index < targets.Count; index++)
-        {
-            bounds.Encapsulate(targets[index].position);
-        }
-        return bounds.center;
+        return min;
     }
 }
