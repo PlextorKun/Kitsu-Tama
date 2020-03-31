@@ -66,23 +66,12 @@ public class FoxController : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
+
 	}
 
 
 	public void Move(float move, bool crouch, bool jump)
 	{
-		
-		Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-
-		if (screenPos.x < cameraMargin)
-		{
-			transform.position = Camera.main.ScreenToWorldPoint(new Vector2(cameraMargin, screenPos.y));
-		}
-
-		else if (screenPos.x > Screen.width - cameraMargin)
-        {
-			transform.position = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width - cameraMargin, screenPos.y));
-        }
 
 		if (portaling)
 		{
