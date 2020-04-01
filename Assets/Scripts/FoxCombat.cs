@@ -32,7 +32,7 @@ public class FoxCombat : MonoBehaviour
         // damage them 
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("hit " + enemy.name);
+            enemy.gameObject.GetComponent<EnemyMovement>().Die();
         }
     }
 

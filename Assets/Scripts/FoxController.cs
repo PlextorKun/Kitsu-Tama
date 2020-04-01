@@ -175,11 +175,14 @@ public class FoxController : MonoBehaviour
 		transform.localScale = theScale;
 	}
 
-	public void automaticPortal()
+	public void portal(Vector3 portalPosition)
     {
-		StartCoroutine(autoPortal());
-		Debug.Log("starting coroutine");
-    }
+		Debug.Log("attempting to portal");
+		transform.position = new Vector3(transform.position.x, transform.position.y - 2 * (transform.position.y - portalPosition.y), transform.position.z);
+		transform.Rotate(180, 0, 0, Space.Self);
+		m_Rigidbody2D.gravityScale *= -1;
+
+	}
 
 	IEnumerator autoPortal()
     {

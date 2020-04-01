@@ -131,4 +131,13 @@ public class EggController : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	public void portal(Vector3 portalPosition)
+	{
+		Debug.Log("attempting to portal");
+		transform.position = new Vector3(transform.position.x, transform.position.y - 2 * (transform.position.y - portalPosition.y), transform.position.z);
+		transform.Rotate(180, 0, 0, Space.Self);
+		m_Rigidbody2D.gravityScale *= -1;
+
+	}
 }

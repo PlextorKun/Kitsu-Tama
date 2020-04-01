@@ -11,15 +11,15 @@ public class CameraFollow : MonoBehaviour
     private void Awake()
     {
         float centerX = GetMinPlayer();
-        transform.position = new Vector3(centerX, transform.position.y, transform.position.z);
+        transform.position = new Vector3(centerX, transform.position.y, transform.position.z) + offset;
     }
     private void LateUpdate()
     {
         float centerX = GetMinPlayer();
 
-        if (transform.position.x <= centerX)
+        if (transform.position.x <= centerX + offset.x)
         {
-            Vector3 newPos = new Vector3(centerX, transform.position.y, transform.position.z);
+            Vector3 newPos = new Vector3(centerX, transform.position.y, transform.position.z) + offset;
             transform.position = newPos;
         }
 
