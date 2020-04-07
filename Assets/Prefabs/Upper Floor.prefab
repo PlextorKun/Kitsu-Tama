@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5587868882709851210}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.33023, y: -0.52332896, z: 7.0763636}
   m_LocalScale: {x: 0.18860501, y: 0.45453897, z: 1}
   m_Children: []
@@ -71,15 +71,15 @@ SpriteShapeRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 290359847
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites:
   - {fileID: -4219134444641109766, guid: 550e91c594125c5409bd8646924ced15, type: 3}
   m_LocalAABB:
-    m_Center: {x: 27.467585, y: -0.027252257, z: -0.005}
-    m_Extent: {x: 29.468155, y: 0.64391863, z: 0.005}
+    m_Center: {x: 47.945507, y: -0.038484693, z: -0.005}
+    m_Extent: {x: 49.629562, y: 0.6438004, z: 0.005}
 --- !u!114 &5587868882709851213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 1
     m_ControlPoints:
-    - position: {x: -2, y: 0, z: 0}
+    - position: {x: -1.683719, y: -0.065618485, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 56.935173, y: -0.054504454, z: 0}
+    - position: {x: 97.57474, y: -0.011350979, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -141,6 +141,6 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0.615}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.9999988, y: 0.001233336}
-  - {x: 56.184296, y: -0.052576665}
-  - {x: 56.93517, y: -0.05327112}
+  - {x: -1.6837198, y: -0.064385176}
+  - {x: 96.310104, y: -0.010809067}
+  - {x: 97.57473, y: -0.010117653}
