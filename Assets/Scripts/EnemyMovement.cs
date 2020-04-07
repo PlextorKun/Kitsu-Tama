@@ -52,9 +52,12 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hit trigger");
-        Debug.Log("will die");
-        Die();
+        if (collision.transform.CompareTag("Egg"))
+        {
+            Debug.Log("hit trigger");
+            Debug.Log("will die");
+            Die();
+        }
     }
     #endregion
 
