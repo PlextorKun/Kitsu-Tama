@@ -45,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (collision.transform.CompareTag("Fox"))
         {
-            //collision.transform.GetComponent<FoxController>().TakeDamage(burnDamage);
+            collision.transform.GetComponent<FoxController>().TakeDamage(burnDamage);
             Debug.Log("burned fox");
         }
     }
