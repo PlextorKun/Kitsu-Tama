@@ -6,7 +6,7 @@ public class LockedPortal : MonoBehaviour
 {
     private List<GameObject> alreadyPortaled = new List<GameObject>();
     private List<GameObject> onPortal = new List<GameObject>();
-    private bool open = false;
+    private int openButtons = 0;
 
     public Color openColor;
     public Color closedColor;
@@ -19,7 +19,7 @@ public class LockedPortal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (open)
+        if (openButtons > 0)
         {
             foreach (GameObject gameobj in onPortal)
             {
@@ -53,15 +53,18 @@ public class LockedPortal : MonoBehaviour
 
     public void openPortal()
     {
-        open = true;
+        openButtons += 1;
         gameObject.GetComponent<SpriteRenderer>().color = openColor;
     }
 
     public void closePortal()
     {
-        open = false;
+        openButtons -= 1;
         alreadyPortaled = new List<GameObject>();
-        gameObject.GetComponent<SpriteRenderer>().color = closedColor;
+        if (openButtons <= 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = closedColor;
+        }
     }
 
 }

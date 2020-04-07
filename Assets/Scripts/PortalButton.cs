@@ -25,6 +25,7 @@ public class PortalButton : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.green;
     }
 
+
     void OnTriggerExit2D(Collider2D coll)
     {
         portal.GetComponent<LockedPortal>().closePortal();
