@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System;
 
 public class EggController : MonoBehaviour
 {
@@ -116,7 +117,7 @@ public class EggController : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, -m_JumpForce));
+			m_Rigidbody2D.AddForce(new Vector2(0f, Math.Sign(m_Rigidbody2D.gravityScale) * m_JumpForce));
 		}
 	}
 
