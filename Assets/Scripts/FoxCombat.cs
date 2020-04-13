@@ -32,7 +32,7 @@ public class FoxCombat : MonoBehaviour
         // damage them 
         foreach(Collider2D enemy in hitEnemies)
         {
-            if (enemy.gameObject.tag == "Stump")
+            if (enemy.gameObject.CompareTag("Stump"))
             {
                 enemy.gameObject.GetComponent<Stump>().Die();
             }
