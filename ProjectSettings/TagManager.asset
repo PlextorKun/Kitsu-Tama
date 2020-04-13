@@ -10,6 +10,7 @@ TagManager:
   - Fox
   - Sune Tama
   - Enemies
+  - Stump
   layers:
   - Default
   - TransparentFX

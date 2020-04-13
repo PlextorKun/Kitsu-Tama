@@ -32,6 +32,10 @@ public class FoxCombat : MonoBehaviour
         // damage them 
         foreach(Collider2D enemy in hitEnemies)
         {
+            if (enemy.gameObject.tag == "Stump")
+            {
+                enemy.gameObject.GetComponent<Stump>().Die();
+            }
             enemy.gameObject.GetComponent<EnemyMovement>().Die();
         }
     }
