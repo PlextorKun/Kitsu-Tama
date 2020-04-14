@@ -89,7 +89,7 @@ public class FoxController : MonoBehaviour
 
 	public void Die()
 	{
-		GameMaster.KillFox(this);
+		GameMaster.RespawnFox(this);
 	}
 	#endregion
 

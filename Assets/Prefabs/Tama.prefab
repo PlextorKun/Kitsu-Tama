@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1071393883}
   - component: {fileID: 1071393884}
   - component: {fileID: 1183245562}
+  - component: {fileID: 1652899099}
   m_Layer: 8
   m_Name: Tama
   m_TagString: Egg
@@ -127,7 +128,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 5711418805817486875}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 82a034c4cba5449c7a90c2993d1e2dcb, type: 2}
+  m_Material: {fileID: 6200000, guid: f244df2e04acf436db515df886646df9, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -150,7 +151,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: -2
-  m_Material: {fileID: 6200000, guid: 82a034c4cba5449c7a90c2993d1e2dcb, type: 2}
+  m_Material: {fileID: 6200000, guid: f244df2e04acf436db515df886646df9, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -168,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1071393884}
-  runSpeed: 15
+  runSpeed: 18
 --- !u!114 &1071393884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,12 +182,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2208c310cd84d0b88ed68a6bde934b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 500
+  m_JumpForce: 520
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 311
   m_GroundCheck: {fileID: 1714215228422888877}
   m_CeilingCheck: {fileID: 3863470590172778489}
   OnLandEvent:
@@ -213,6 +214,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &1652899099
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5711418805817486875}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0029783547, y: -0.14407438}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15584192, y: 0.045015156}
+  m_EdgeRadius: 0
 --- !u!1 &5780883843739981305
 GameObject:
   m_ObjectHideFlags: 0

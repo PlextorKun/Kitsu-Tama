@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
-    public static void KillEgg(EggController egg)
+    public GameObject[] spawnpoints = new GameObject[3];
+
+    public static void RespawnEgg(EggController egg)
     {
         Destroy(egg.gameObject);
     }
 
-    public static void KillFox(FoxController fox)
+    public static void RespawnFox(FoxController fox)
     {
         Destroy(fox.gameObject);
     }

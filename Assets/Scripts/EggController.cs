@@ -85,7 +85,7 @@ public class EggController : MonoBehaviour
 
 	public void Die()
 	{
-		GameMaster.KillEgg(this);
+		GameMaster.RespawnEgg(this);
 	}
 	#endregion
 
