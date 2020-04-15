@@ -37,4 +37,9 @@ public class CameraFollow : MonoBehaviour
         }
         return min;
     }
+    public void Respawn()
+    {
+        float centerX = GetMinPlayer();
+        transform.position = new Vector3(centerX, transform.position.y, transform.position.z) + offset;
+    }
 }

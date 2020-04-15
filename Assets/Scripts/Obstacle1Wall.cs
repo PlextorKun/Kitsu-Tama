@@ -15,10 +15,10 @@ public class Obstacle1Wall : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = movingColor;
         if (inOriginalPos)
         {
-            StartCoroutine(moveD());
+            StartCoroutine(moveU());
         } else
         {
-            StartCoroutine(moveU());
+            StartCoroutine(moveD());
         }
         inOriginalPos = !inOriginalPos;
     }
@@ -34,7 +34,7 @@ public class Obstacle1Wall : MonoBehaviour
         float elapsedTime = 0;
         float totalTransitionTime = 2;
         Vector3 original = transform.position;
-        Vector3 other = new Vector3(transform.position.x, transform.position.y + gameObject.GetComponent<BoxCollider2D>().bounds.size.y, transform.position.z);
+        Vector3 other = new Vector3(transform.position.x, transform.position.y - gameObject.GetComponent<BoxCollider2D>().bounds.size.y, transform.position.z);
         while (transform.position != other)
         {
             transform.position = Vector3.Lerp(original, other, elapsedTime / totalTransitionTime);
