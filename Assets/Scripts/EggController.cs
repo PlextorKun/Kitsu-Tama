@@ -85,7 +85,8 @@ public class EggController : MonoBehaviour
 
 	public void Die()
 	{
-		GameMaster.RespawnEgg(this);
+		GameObject gm = GameObject.FindWithTag("GameController");
+		gm.GetComponent<GameMaster>().RespawnEgg(this);
 	}
 	#endregion
 

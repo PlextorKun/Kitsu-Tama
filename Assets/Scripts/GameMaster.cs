@@ -4,15 +4,43 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
-    public GameObject[] spawnpoints = new GameObject[3];
+    public static GameMaster instance = null;
 
-    public static void RespawnEgg(EggController egg)
+    //public GameObject[] spawnpoints_fox;
+    //public GameObject[] spawnpoints_egg;
+
+    [SerializeField] Transform spawn_fox;
+    [SerializeField] Transform spawn_egg;
+
+
+    
+    private void Awake()
     {
-        Destroy(egg.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+
+        //spawnpoints_fox = new GameObject[3];
+        //spawnpoints_egg = new GameObject[3];
+    }
+    
+
+    public void RespawnEgg(EggController egg)
+    {
+        egg.Heal(10);
+        egg.gameObject.transform.position = spawn_egg.position;
     }
 
-    public static void RespawnFox(FoxController fox)
+    public void RespawnFox(FoxController fox)
     {
-        Destroy(fox.gameObject);
+        fox.Heal(10);
+        fox.gameObject.transform.position = spawn_fox.position;
     }
 }
