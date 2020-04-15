@@ -34,13 +34,27 @@ public class GameMaster : MonoBehaviour
 
     public void RespawnEgg(EggController egg)
     {
-        egg.Heal(10);
         egg.gameObject.transform.position = spawn_egg.position;
+        egg.Heal(10);
+
+        GameObject fox = GameObject.FindWithTag("Fox");
+        fox.transform.position = spawn_fox.position;
+        fox.GetComponent<FoxController>().Heal(10);
+
+        GameObject cam = GameObject.FindWithTag("MainCamera");
+        cam.GetComponent<CameraFollow>().Respawn();
     }
 
     public void RespawnFox(FoxController fox)
     {
-        fox.Heal(10);
         fox.gameObject.transform.position = spawn_fox.position;
+        fox.Heal(10);
+
+        GameObject egg = GameObject.FindWithTag("Egg");
+        egg.transform.position = spawn_egg.position;
+        egg.GetComponent<EggController>().Heal(10);
+
+        GameObject cam = GameObject.FindWithTag("MainCamera");
+        cam.GetComponent<CameraFollow>().Respawn();
     }
 }
