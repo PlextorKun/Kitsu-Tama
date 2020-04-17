@@ -60,9 +60,9 @@ public class LockedPortal : MonoBehaviour
     public void closePortal()
     {
         openButtons -= 1;
-        alreadyPortaled = new List<GameObject>();
         if (openButtons <= 0)
         {
+            alreadyPortaled = new List<GameObject>();
             gameObject.GetComponent<SpriteRenderer>().color = closedColor;
         }
     }

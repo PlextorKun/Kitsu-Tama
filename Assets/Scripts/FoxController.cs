@@ -36,6 +36,14 @@ public class FoxController : MonoBehaviour
 	public Slider hpSlider;
 	#endregion
 
+	#region animation_variables
+	Animator anim;
+	#endregion
+
+	#region attack_variables
+	public bool isAttack = false;
+	#endregion
+
 
 	private void Awake()
 	{
@@ -47,6 +55,8 @@ public class FoxController : MonoBehaviour
 
 		currHealth = maxHealth;
 		hpSlider.value = currHealth / maxHealth;
+
+		anim = GetComponent<Animator>();
 	}
 
 	private void FixedUpdate()
@@ -96,11 +106,19 @@ public class FoxController : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
-		
+		if (isAttack)
+        {
+			return;
+        }
 
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
+			anim.SetBool("Moving", true);
+			if (move == 0)
+            {
+				anim.SetBool("Moving", false);
+            }
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
@@ -122,6 +140,7 @@ public class FoxController : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
+			anim.SetTrigger("Jump");
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, Math.Sign(m_Rigidbody2D.gravityScale) * m_JumpForce));

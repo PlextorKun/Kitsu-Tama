@@ -6452,6 +6452,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1757073962}
     m_Modifications:
+    - target: {fileID: 1803163215, guid: 76e6d9eb3ecbb8c469a1c0dfd7281cf6, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.09210956
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803163215, guid: 76e6d9eb3ecbb8c469a1c0dfd7281cf6, type: 3}
+      propertyPath: m_Size.x
+      value: 0.55116856
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803163215, guid: 76e6d9eb3ecbb8c469a1c0dfd7281cf6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.09816327
+      objectReference: {fileID: 0}
     - target: {fileID: 661780314702654187, guid: 76e6d9eb3ecbb8c469a1c0dfd7281cf6,
         type: 3}
       propertyPath: hpSlider
@@ -6517,7 +6529,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1803163216, guid: 76e6d9eb3ecbb8c469a1c0dfd7281cf6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 76e6d9eb3ecbb8c469a1c0dfd7281cf6, type: 3}
 --- !u!1 &1707967425
 GameObject:
@@ -7016,8 +7029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ad57d552b544af48d1bba8e5d20156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnpoints_fox: []
-  spawnpoints_egg: []
   spawn_fox: {fileID: 243284808}
   spawn_egg: {fileID: 1512308439}
 --- !u!4 &1837081825
@@ -7120,6 +7131,10 @@ PrefabInstance:
       propertyPath: hpSlider
       value: 
       objectReference: {fileID: 1385041998}
+    - target: {fileID: 1071393884, guid: 6e768ae492a90451a801a9347aed26d1, type: 3}
+      propertyPath: JumpTime
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5711418805817486873, guid: 6e768ae492a90451a801a9347aed26d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8342,7 +8357,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Locked Portal
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3396135590763606622, guid: 3957cb2d9c7672347953442d9314837f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3957cb2d9c7672347953442d9314837f, type: 3}
 --- !u!4 &4136201733216420182
 Transform:

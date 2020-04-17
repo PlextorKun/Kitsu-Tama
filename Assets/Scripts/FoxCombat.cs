@@ -10,13 +10,22 @@ public class FoxCombat : MonoBehaviour
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+
+    Animator anim;
+    public float AttackTime = 0.5f;
     // Update is called once per frame
+
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     void Update()
     {
         if (Time.time >= nextAttackTime)
         {
             if (Input.GetKeyDown(KeyCode.RightShift))
             {
+                StartCoroutine(AttackAnim());
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -45,5 +54,13 @@ public class FoxCombat : MonoBehaviour
         if (attackPoint == null)
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    IEnumerator AttackAnim()
+    {
+        anim.SetTrigger("Attack");
+        GetComponent<FoxController>().isAttack = true;
+        yield return new WaitForSeconds(AttackTime);
+        GetComponent<FoxController>().isAttack = false;
     }
 }

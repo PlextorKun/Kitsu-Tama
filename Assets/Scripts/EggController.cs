@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
+using System.Collections;
+
 
 public class EggController : MonoBehaviour
 {
@@ -34,6 +36,10 @@ public class EggController : MonoBehaviour
 	public Slider hpSlider;
 	#endregion
 
+	#region animation_variables
+	Animator anim;
+	public float JumpTime = 0.5f;
+	#endregion
 
 	private void Awake()
 	{
@@ -44,6 +50,8 @@ public class EggController : MonoBehaviour
 
 		currHealth = maxHealth;
 		hpSlider.value = currHealth / maxHealth;
+
+		anim = GetComponent<Animator>();
 	}
 
     private void FixedUpdate()
@@ -95,6 +103,11 @@ public class EggController : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
+			anim.SetBool("Moving", true);
+			if (move == 0)
+			{
+				anim.SetBool("Moving", false);
+			}
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
@@ -116,10 +129,19 @@ public class EggController : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
+			StartCoroutine(JumpAnim());
+
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, Math.Sign(m_Rigidbody2D.gravityScale) * m_JumpForce));
 		}
+	}
+
+	IEnumerator JumpAnim()
+    {
+		anim.SetBool("Jumping", true);
+		yield return new WaitForSeconds(JumpTime);
+		anim.SetBool("Jumping", false);
 	}
 
 
