@@ -11,6 +11,7 @@ TagManager:
   - Sune Tama
   - Enemies
   - Stump
+  - Wisp
   layers:
   - Default
   - TransparentFX

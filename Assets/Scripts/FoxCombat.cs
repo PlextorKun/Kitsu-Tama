@@ -45,7 +45,10 @@ public class FoxCombat : MonoBehaviour
             {
                 enemy.gameObject.GetComponent<Stump>().Die();
             }
-            enemy.gameObject.GetComponent<Wisp>().Die();
+            if (enemy.gameObject.CompareTag("Wisp"))
+            {
+                enemy.gameObject.GetComponent<Wisp>().Die();
+            }
         }
     }
 

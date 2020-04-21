@@ -59,7 +59,9 @@ public class WispShooter : MonoBehaviour
 			Vector2 FireDirection = new Vector2(fireDir, 0);
 			FireDirection = FireDirection * fireSpeed;
 
-			GameObject newProjectile = (GameObject)Instantiate(projectile, transform.position, transform.rotation);
+			Vector3 newPos = new Vector3(transform.position.x + fireDir * .5f, transform.position.y, transform.position.z);
+
+			GameObject newProjectile = (GameObject)Instantiate(projectile, newPos, transform.rotation);
 			newProjectile.GetComponent<Rigidbody2D>().velocity = FireDirection;
 			Destroy(newProjectile, projectileExistTime);
 		}

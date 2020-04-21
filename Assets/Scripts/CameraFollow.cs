@@ -8,6 +8,8 @@ public class CameraFollow : MonoBehaviour
 
     public Vector3 offset;
 
+    public GameObject blackScreen;
+
     private void Awake()
     {
         float centerX = GetMinPlayer();
@@ -39,7 +41,34 @@ public class CameraFollow : MonoBehaviour
     }
     public void Respawn()
     {
+        StartCoroutine(FadeInAndOut());
+    }
+
+    IEnumerator FadeInAndOut()
+    {
+        float elapsedTime = 0;
+        Color original = blackScreen.GetComponent<SpriteRenderer>().color;
+        Color opaque = new Color(original.r, original.g, original.b, 1f);
+        while (elapsedTime < 1f)
+        {
+            blackScreen.GetComponent<SpriteRenderer>().color = Color.Lerp(original, opaque, elapsedTime / 1f);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
         float centerX = GetMinPlayer();
         transform.position = new Vector3(centerX, transform.position.y, transform.position.z) + offset;
+
+        elapsedTime = 0;
+        while (elapsedTime < 1f)
+        {
+            blackScreen.GetComponent<SpriteRenderer>().color = Color.Lerp(opaque, original, elapsedTime / 1f);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+
     }
+
+   
 }

@@ -18,6 +18,11 @@ public class Projectile : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        //Destroy(this.gameObject);
+        if (!collision.transform.CompareTag("Wisp"))
+        {
+            Destroy(this.gameObject);
+
+        }
+
     }
 }
