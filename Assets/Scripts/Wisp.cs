@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wisp : MonoBehaviour
 {
-    public int burnDamage;
+    public float burnDamage;
 
     #region interact_functions
     void OnCollisionEnter2D(Collision2D collision)

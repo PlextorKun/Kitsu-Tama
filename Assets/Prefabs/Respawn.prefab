@@ -43,5 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ad57d552b544af48d1bba8e5d20156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn_fox: {fileID: 0}
-  spawn_egg: {fileID: 0}
+  spawn_fox:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawn_egg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

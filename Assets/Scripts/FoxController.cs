@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using System.Collections;
 using System;
+using System.Collections;
+
 
 public class FoxController : MonoBehaviour
 {
@@ -20,7 +21,6 @@ public class FoxController : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-
 	[Header("Events")]
 	[Space]
 
@@ -34,6 +34,12 @@ public class FoxController : MonoBehaviour
 	public float maxHealth;
 	float currHealth;
 	public Slider hpSlider;
+	#endregion
+
+	#region portal_variables
+	public float maxTime;
+	float currTime;
+	bool countdown;
 	#endregion
 
 	#region animation_variables
@@ -56,6 +62,9 @@ public class FoxController : MonoBehaviour
 		currHealth = maxHealth;
 		hpSlider.value = currHealth / maxHealth;
 
+		currTime = maxTime;
+		countdown = false;
+
 		anim = GetComponent<Animator>();
 	}
 
@@ -77,10 +86,39 @@ public class FoxController : MonoBehaviour
 			}
 		}
 
+		if (countdown)
+		{
+			currTime -= Time.deltaTime;
+			if (currTime <= 0)
+			{
+				countdown = false;
+				transform.Rotate(180, 0, 0, Space.Self);
+				m_Rigidbody2D.gravityScale *= -1;
+				Die();
+			}
+		}
 	}
 
+	#region portal_functions
+	public void portal(Vector3 portalPosition)
+	{
+		Debug.Log("attempting to portal");
+		transform.position = new Vector3(transform.position.x, transform.position.y - 2 * (transform.position.y - portalPosition.y), transform.position.z);
+		transform.Rotate(180, 0, 0, Space.Self);
+		m_Rigidbody2D.gravityScale *= -1;
+
+		DoCountdown();
+	}
+
+	public void DoCountdown()
+	{
+		currTime = maxTime;
+		countdown = !countdown;
+	}
+	#endregion
+
 	#region health_functions
-	public void TakeDamage(int value)
+	public void TakeDamage(float value)
 	{
 		currHealth -= value;
 		hpSlider.value = currHealth / maxHealth;
@@ -90,7 +128,7 @@ public class FoxController : MonoBehaviour
 		}
 	}
 
-	public void Heal(int value)
+	public void Heal(float value)
 	{
 		currHealth += value;
 		currHealth = Mathf.Min(currHealth, maxHealth);
@@ -158,15 +196,4 @@ public class FoxController : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
-
-	public void portal(Vector3 portalPosition)
-    {
-		Debug.Log("attempting to portal");
-		transform.position = new Vector3(transform.position.x, transform.position.y - 2 * (transform.position.y - portalPosition.y), transform.position.z);
-		transform.Rotate(180, 0, 0, Space.Self);
-		m_Rigidbody2D.gravityScale *= -1;
-
-	}
-
-	
 }

@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 5503805182608321064}
   - component: {fileID: 1803163208}
   - component: {fileID: 1803163215}
-  - component: {fileID: 1803163216}
   - component: {fileID: 1803163213}
   m_Layer: 8
   m_Name: Sune
@@ -164,6 +163,8 @@ MonoBehaviour:
       m_Calls: []
   maxHealth: 10
   hpSlider: {fileID: 0}
+  maxTime: 60
+  isAttack: 0
 --- !u!114 &661780314702654197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +197,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackRate: 100
+  AttackTime: 0.5
 --- !u!70 &1803163208
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -225,25 +227,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22620223, y: -0.09816329}
-  m_Size: {x: 0.2829824, y: 0.18908702}
+  m_Offset: {x: 0.09210956, y: -0.09816327}
+  m_Size: {x: 0.55116856, y: 0.18908702}
   m_Direction: 1
---- !u!70 &1803163216
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661780314702654192}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.08109125, y: -0.10243114}
-  m_Size: {x: 0.15494251, y: 0.19762263}
-  m_Direction: 0
 --- !u!95 &1803163213
 Animator:
   serializedVersion: 3

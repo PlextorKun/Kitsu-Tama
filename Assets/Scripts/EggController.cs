@@ -36,8 +36,14 @@ public class EggController : MonoBehaviour
 	public Slider hpSlider;
 	#endregion
 
-	#region animation_variables
-	Animator anim;
+	#region portal_variables
+	public float maxTime;
+	float currTime;
+	bool countdown;
+    #endregion
+
+    #region animation_variables
+    Animator anim;
 	public float JumpTime = 0.5f;
 	#endregion
 
@@ -50,6 +56,9 @@ public class EggController : MonoBehaviour
 
 		currHealth = maxHealth;
 		hpSlider.value = currHealth / maxHealth;
+
+		currTime = maxTime;
+        countdown = false;
 
 		anim = GetComponent<Animator>();
 	}
@@ -71,10 +80,40 @@ public class EggController : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
+
+        if (countdown)
+        {
+			currTime -= Time.deltaTime;
+			if (currTime <= 0)
+			{
+				countdown = false;
+				transform.Rotate(180, 0, 0, Space.Self);
+				m_Rigidbody2D.gravityScale *= -1;
+				Die();
+			}
+		}
 	}
 
-    #region health_functions
-    public void TakeDamage(int value)
+	#region portal_functions
+	public void portal(Vector3 portalPosition)
+	{
+		Debug.Log("attempting to portal");
+		transform.position = new Vector3(transform.position.x, transform.position.y - 2 * (transform.position.y - portalPosition.y), transform.position.z);
+		transform.Rotate(180, 0, 0, Space.Self);
+		m_Rigidbody2D.gravityScale *= -1;
+
+		DoCountdown();
+	}
+
+    public void DoCountdown()
+    {
+		currTime = maxTime;
+		countdown = !countdown;
+	}
+	#endregion
+
+	#region health_functions
+	public void TakeDamage(float value)
     {
 		currHealth -= value;
 		hpSlider.value = currHealth / maxHealth;
@@ -84,7 +123,7 @@ public class EggController : MonoBehaviour
 		}
 	}
 
-	public void Heal(int value)
+	public void Heal(float value)
 	{
 		currHealth += value;
 		currHealth = Mathf.Min(currHealth, maxHealth);
@@ -154,14 +193,5 @@ public class EggController : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-	}
-
-	public void portal(Vector3 portalPosition)
-	{
-		Debug.Log("attempting to portal");
-		transform.position = new Vector3(transform.position.x, transform.position.y - 2 * (transform.position.y - portalPosition.y), transform.position.z);
-		transform.Rotate(180, 0, 0, Space.Self);
-		m_Rigidbody2D.gravityScale *= -1;
-
 	}
 }

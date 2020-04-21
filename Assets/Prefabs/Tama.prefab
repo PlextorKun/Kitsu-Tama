@@ -195,6 +195,8 @@ MonoBehaviour:
       m_Calls: []
   maxHealth: 10
   hpSlider: {fileID: 0}
+  maxTime: 60
+  JumpTime: 0.8
 --- !u!95 &1183245562
 Animator:
   serializedVersion: 3
