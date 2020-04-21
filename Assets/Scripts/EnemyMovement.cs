@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 other;
     bool moving;
     bool move_right;
-    public int burnDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -31,39 +30,6 @@ public class EnemyMovement : MonoBehaviour
         {
             StartCoroutine(EnemyMoveLeft());
         }
-    }
-
-    #region interact_functions
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("hit collider");
-        if (collision.transform.CompareTag("Egg"))
-        {
-            collision.transform.GetComponent<EggController>().TakeDamage(burnDamage);
-            Debug.Log("burned egg");
-        }
-
-        if (collision.transform.CompareTag("Fox"))
-        {
-            collision.transform.GetComponent<FoxController>().TakeDamage(burnDamage);
-            Debug.Log("burned fox");
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.CompareTag("Egg"))
-        {
-            Debug.Log("hit trigger");
-            Debug.Log("will die");
-            Die();
-        }
-    }
-    #endregion
-
-    public void Die()
-    {
-        Destroy(this.gameObject);
     }
 
     IEnumerator EnemyMoveRight()

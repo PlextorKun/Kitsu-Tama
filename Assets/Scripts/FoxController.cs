@@ -99,8 +99,8 @@ public class FoxController : MonoBehaviour
 
 	public void Die()
 	{
-		GameObject gm = GameObject.FindWithTag("GameController");
-		gm.GetComponent<GameMaster>().RespawnFox(this);
+		GameObject r = GameObject.FindWithTag("Respawn");
+		r.GetComponent<Respawner>().RespawnFox(this);
 	}
 	#endregion
 

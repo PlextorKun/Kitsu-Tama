@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1856955001363246804}
   - component: {fileID: 1856955001363246803}
   - component: {fileID: 1856955001363246802}
-  - component: {fileID: 1856955001363246806}
   - component: {fileID: 1856955001363246807}
   - component: {fileID: 365481400970336049}
+  - component: {fileID: 485572447}
   m_Layer: 9
   m_Name: Wisp
   m_TagString: Untagged
@@ -124,19 +124,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1856955001363246806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856955001363246801}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5b8f48a859747e2b291ab8204f327a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  burnDamage: 2
 --- !u!70 &1856955001363246807
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -172,6 +159,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &485572447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856955001363246801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e4e35e721fba45b8be2d538ef352bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burnDamage: 2
 --- !u!1 &3852212896056048223
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 2665949617479539534}
   - component: {fileID: 8747068165906170582}
   - component: {fileID: 8686900757542508738}
-  - component: {fileID: 446706352}
+  - component: {fileID: 191595672}
   m_Layer: 9
   m_Name: Shooter
   m_TagString: Untagged
@@ -249,8 +249,8 @@ MonoBehaviour:
   pauseTime: 2
   fireTime: 0.25
   fireSpeed: 8
-  projectileExistTime: 2
---- !u!50 &446706352
+  projectileExistTime: 1
+--- !u!50 &191595672
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
