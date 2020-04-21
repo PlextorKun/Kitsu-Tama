@@ -13,7 +13,9 @@ public class Obstacle1Button : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (activated)
+        //Debug.Log(coll.gameObject + "hit the button");
+
+        if ((coll.transform.CompareTag("Egg") || coll.transform.CompareTag("Fox")) && activated)
         {
             gameObject.GetComponent<SpriteRenderer>().color = inactivatedColor;
             wall.GetComponent<Obstacle1Wall>().move();

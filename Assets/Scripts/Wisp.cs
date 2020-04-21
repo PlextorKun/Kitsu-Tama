@@ -9,7 +9,7 @@ public class Wisp : MonoBehaviour
     #region interact_functions
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("hit wisp collider");
+        //Debug.Log(collision.gameObject + "hit wisp collider");
         if (collision.transform.CompareTag("Egg"))
         {
             collision.transform.GetComponent<EggController>().TakeDamage(burnDamage);

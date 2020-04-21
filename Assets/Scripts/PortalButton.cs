@@ -20,15 +20,22 @@ public class PortalButton : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        portal.GetComponent<LockedPortal>().openPortal();
-        Debug.Log("opening portal");
-        gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        if (coll.transform.CompareTag("Egg") || coll.transform.CompareTag("Fox"))
+        {
+            portal.GetComponent<LockedPortal>().openPortal();
+            Debug.Log("opening portal");
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        
     }
 
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        portal.GetComponent<LockedPortal>().closePortal();
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        if (coll.transform.CompareTag("Egg") || coll.transform.CompareTag("Fox"))
+        {
+            portal.GetComponent<LockedPortal>().closePortal();
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
 }
