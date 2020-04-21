@@ -8,6 +8,8 @@ public class Obstacle1Wall : MonoBehaviour
     public Color stationaryColor;
     public GameObject button;
 
+    public bool moveUp = true;
+
     private bool inOriginalPos = true;
 
     public void move()
@@ -15,12 +17,28 @@ public class Obstacle1Wall : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = movingColor;
         if (inOriginalPos)
         {
-            StartCoroutine(moveU());
-        } else
-        {
-            StartCoroutine(moveD());
+            if (moveUp)
+            {
+                StartCoroutine(moveU());
+            }
+            else
+            {
+                StartCoroutine(moveD());
+                Debug.Log("movedown");
+            }
         }
-        inOriginalPos = !inOriginalPos;
+        else
+        {
+            if (moveUp)
+            {
+                StartCoroutine(moveD());
+            }
+            else
+            {
+                StartCoroutine(moveU());
+            }
+        }
+            inOriginalPos = !inOriginalPos;
     }
 
     private void finishMoving()
