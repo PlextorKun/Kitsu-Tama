@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 05e0a20db75523240b3035286f08bcc3
+guid: b83534a7052c1be43a973e2846de31ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2467003960796469811
-    second: kitsu attack_0
+      213: -7127518918289978284
+    second: green portal_0
   - first:
-      213: 7073277548786259938
-    second: kitsu attack_1
+      213: -9143194663774449183
+    second: green portal_1
   - first:
-      213: -4490746291315465404
-    second: kitsu attack_2
+      213: 5520539760352885372
+    second: green portal_2
   - first:
-      213: -7818599169809135079
-    second: kitsu attack_3
+      213: 6243418497449965148
+    second: green portal_3
+  - first:
+      213: -710945750220621554
+    second: green portal_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -98,7 +101,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kitsu attack_0
+      name: green portal_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a324920179ab5174c8c2a8a6584af158
+      internalID: -7127518918289978284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green portal_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd1413f2977b9448bb8cd567f42ed2f
+      internalID: -9143194663774449183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green portal_2
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 918d74bb26ef80f4aab07bd39966869c
-      internalID: -2467003960796469811
+      spriteID: 2a32cefe5a114234fbbd8919f743095b
+      internalID: 5520539760352885372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kitsu attack_1
+      name: green portal_3
       rect:
         serializedVersion: 2
         x: 64
@@ -133,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f283d60f300c79144a8d76e3ebc04d72
-      internalID: 7073277548786259938
+      spriteID: 1b82d6a5542a57c4e8349b021e554aa0
+      internalID: 6243418497449965148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kitsu attack_2
+      name: green portal_4
       rect:
         serializedVersion: 2
         x: 0
@@ -154,29 +199,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 862ecacb9b98a6b43b6a916dcec79193
-      internalID: -4490746291315465404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kitsu attack_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b7c7912889430f49b8f07d87a1158c4
-      internalID: -7818599169809135079
+      spriteID: 7798f262128fe6f45a71dee72c489f62
+      internalID: -710945750220621554
       vertices: []
       indices: 
       edges: []
