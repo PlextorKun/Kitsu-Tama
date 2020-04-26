@@ -10,10 +10,13 @@ public class LockedPortal : MonoBehaviour
 
     public Color openColor;
     public Color closedColor;
+
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -55,6 +58,7 @@ public class LockedPortal : MonoBehaviour
     {
         openButtons += 1;
         gameObject.GetComponent<SpriteRenderer>().color = openColor;
+        anim.SetBool("Open", true);
     }
 
     public void closePortal()
@@ -62,6 +66,7 @@ public class LockedPortal : MonoBehaviour
         openButtons -= 1;
         if (openButtons <= 0)
         {
+            anim.SetBool("Open", false);
             alreadyPortaled = new List<GameObject>();
             gameObject.GetComponent<SpriteRenderer>().color = closedColor;
         }
