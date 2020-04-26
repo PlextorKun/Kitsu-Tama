@@ -49,6 +49,10 @@ public class FoxCombat : MonoBehaviour
             {
                 enemy.gameObject.GetComponent<Wisp>().Die();
             }
+            if (enemy.gameObject.CompareTag("Rock"))
+            {
+                enemy.gameObject.GetComponent<RockMovement>.Die();
+            }
         }
     }
 

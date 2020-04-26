@@ -11,6 +11,7 @@ public class RockMovement : MonoBehaviour
     public float speed = 0.25f;
     Vector3 pointA;
     Vector3 pointB;
+    int health = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -69,4 +70,18 @@ public class RockMovement : MonoBehaviour
         isMoving = false;
 
     }
+
+    public void Die()
+    {
+        if (health == 0)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            health -= 1;
+        }
+        
+    }
+
 }

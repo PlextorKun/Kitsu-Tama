@@ -12,6 +12,7 @@ TagManager:
   - Enemies
   - Stump
   - Wisp
+  - Rock
   layers:
   - Default
   - TransparentFX
