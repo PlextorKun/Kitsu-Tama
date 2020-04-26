@@ -8,28 +8,35 @@ public class RockMovement : MonoBehaviour
     private Vector3 replacement;
     bool isMoving;
     bool moveRight;
+    public float speed = 0.25f;
+    Vector3 pointA;
+    Vector3 pointB;
 
     // Start is called before the first frame update
     void Start()
     {
-        initial = transform.position;
-        replacement = transform.position + new Vector3(3, 0, 0);
-        isMoving = false;
-        moveRight = true;
-        StartCoroutine(enemyRight());
+        pointA = new Vector3(142, 2, 0);
+        pointB = new Vector3(162, 2, 0);
+        //initial = transform.position;
+        //replacement = transform.position + new Vector3(3, 0, 0);
+        //isMoving = false;
+        //moveRight = true;
+        //StartCoroutine(enemyRight());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isMoving && moveRight)
-        {
-            StartCoroutine(enemyRight());
-        }
-        if (!isMoving && !moveRight)
-        {
-            StartCoroutine(enemyLeft());
-        }
+        float time = Mathf.PingPong(Time.time * speed, 1);
+        transform.position = Vector3.Lerp(pointA, pointB, time);
+        //if (!isMoving && moveRight)
+        //{
+        //   StartCoroutine(enemyRight());
+        //}
+        //if (!isMoving && !moveRight)
+        //{
+        //   StartCoroutine(enemyLeft());
+        //}
     }
 
     IEnumerator enemyRight()
