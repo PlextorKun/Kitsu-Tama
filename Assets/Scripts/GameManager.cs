@@ -7,26 +7,18 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    public static bool exists = false;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            exists = true;
-            return;
         }
-
         else if (instance != this)
         {
             Destroy(this.gameObject);
         }
 
-        if (exists)
-        {
-            Destroy(this.gameObject);
-        }
         DontDestroyOnLoad(gameObject);
     }
 
