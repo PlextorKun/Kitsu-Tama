@@ -164,6 +164,7 @@ MonoBehaviour:
   maxHealth: 10
   hpSlider: {fileID: 0}
   maxTime: 60
+  portalTimer: {fileID: 0}
   isAttack: 0
 --- !u!114 &661780314702654197
 MonoBehaviour:

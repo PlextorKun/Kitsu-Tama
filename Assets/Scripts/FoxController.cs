@@ -40,6 +40,7 @@ public class FoxController : MonoBehaviour
 	public float maxTime;
 	float currTime;
 	bool countdown;
+	public Slider portalTimer; //new
 	#endregion
 
 	#region animation_variables
@@ -63,6 +64,8 @@ public class FoxController : MonoBehaviour
 		hpSlider.value = currHealth / maxHealth;
 
 		currTime = maxTime;
+		portalTimer.value = currTime / maxTime; //new
+		portalTimer.gameObject.SetActive(false); //new
 		countdown = false;
 
 		anim = GetComponent<Animator>();
@@ -89,9 +92,11 @@ public class FoxController : MonoBehaviour
 		if (countdown)
 		{
 			currTime -= Time.deltaTime;
+			portalTimer.value = currTime / maxTime; //new
 			if (currTime <= 0)
 			{
 				countdown = false;
+				portalTimer.gameObject.SetActive(false); //new
 				transform.Rotate(180, 0, 0, Space.Self);
 				m_Rigidbody2D.gravityScale *= -1;
 				Die();
@@ -114,6 +119,10 @@ public class FoxController : MonoBehaviour
 	{
 		currTime = maxTime;
 		countdown = !countdown;
+
+		portalTimer.value = currTime / maxTime; //new
+		bool show_timer = portalTimer.gameObject.activeSelf; //new
+		portalTimer.gameObject.SetActive(!show_timer); //new
 	}
 	#endregion
 
