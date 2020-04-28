@@ -12,25 +12,19 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
         {
+            Debug.Log("first instance");
             instance = this;
         }
         else if (instance != this)
         {
+            Debug.Log("oopsies extras");
             Destroy(this.gameObject);
         }
 
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown("m"))
-        {
-            GameObject audio = GameObject.FindWithTag("Audio");
-            Destroy(audio);
-            GoToMainMenu();
-        }
-    }
+    
     public void PlayGame()
     {
         Debug.Log("loading level");
