@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown("m"))
         {
+            GameObject audio = GameObject.FindWithTag("Audio");
+            Destroy(audio);
             GoToMainMenu();
         }
     }

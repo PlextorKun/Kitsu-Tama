@@ -13,6 +13,7 @@ TagManager:
   - Stump
   - Wisp
   - Rock
+  - Audio
   layers:
   - Default
   - TransparentFX
