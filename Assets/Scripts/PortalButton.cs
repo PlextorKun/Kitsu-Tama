@@ -5,6 +5,8 @@ using UnityEngine;
 public class PortalButton : MonoBehaviour
 {
     public GameObject portal;
+    public Color openColor;
+    public Color closedColor;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,7 @@ public class PortalButton : MonoBehaviour
         {
             portal.GetComponent<LockedPortal>().openPortal();
             Debug.Log("opening portal");
-            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            gameObject.GetComponent<SpriteRenderer>().color = openColor;
         }
         
     }
@@ -35,7 +37,7 @@ public class PortalButton : MonoBehaviour
         if (coll.transform.CompareTag("Egg") || coll.transform.CompareTag("Fox"))
         {
             portal.GetComponent<LockedPortal>().closePortal();
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            gameObject.GetComponent<SpriteRenderer>().color = closedColor;
         }
     }
 }
