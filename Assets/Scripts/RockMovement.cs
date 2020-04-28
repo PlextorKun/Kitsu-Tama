@@ -11,7 +11,21 @@ public class RockMovement : MonoBehaviour
     public float speed = 0.25f;
     Vector3 pointA;
     Vector3 pointB;
-    int health = 5;
+    int health;
+    int damage = 2;
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Egg"))
+        {
+            collision.transform.GetComponent<EggController>().TakeDamage(damage);
+        }
+
+        if (collision.transform.CompareTag("Fox"))
+        {
+            collision.transform.GetComponent<FoxController>().TakeDamage(damage);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
