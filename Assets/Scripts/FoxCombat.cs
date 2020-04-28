@@ -51,7 +51,7 @@ public class FoxCombat : MonoBehaviour
             }
             if (enemy.gameObject.CompareTag("Rock"))
             {
-                enemy.gameObject.GetComponent<RockMovement>.Die();
+                enemy.gameObject.GetComponent<RockMovement>().Die();
             }
         }
     }
