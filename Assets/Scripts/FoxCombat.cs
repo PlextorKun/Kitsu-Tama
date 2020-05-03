@@ -23,7 +23,7 @@ public class FoxCombat : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.RightShift))
+            if (Input.GetKeyDown(KeyCode.Slash))
             {
                 StartCoroutine(AttackAnim());
                 Attack();

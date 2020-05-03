@@ -152,12 +152,12 @@ RectTransform:
   m_Children:
   - {fileID: 1410096348}
   m_Father: {fileID: 1112792244}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 265.95, y: -136.77}
-  m_SizeDelta: {x: 211.34, y: 37.755}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -200, y: 100}
+  m_SizeDelta: {x: 211.34, y: 37.755005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &705384670
 MonoBehaviour:
@@ -279,14 +279,15 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 831652091}
   m_Father: {fileID: 1112792244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -217, y: -97.85}
-  m_SizeDelta: {x: -466.9, y: -227.3}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -232.5, y: 75}
+  m_SizeDelta: {x: 465, y: 187.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &750031117
 MonoBehaviour:
@@ -370,17 +371,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831652090}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1112792244}
-  m_RootOrder: 1
+  m_Father: {fileID: 750031116}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -283, y: -56}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_SizeDelta: {x: 375, y: 172.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831652092
 MonoBehaviour:
@@ -402,12 +403,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 24
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -421,7 +422,7 @@ MonoBehaviour:
 
     UP - FOX JUMP
 
-    RIGHT SHIFT - FOX ATTACK'
+    FORWARD SLASH (/) - FOX ATTACK'
 --- !u!222 &831652093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -606,7 +607,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 750031116}
-  - {fileID: 831652091}
   - {fileID: 705384669}
   m_Father: {fileID: 0}
   m_RootOrder: 1

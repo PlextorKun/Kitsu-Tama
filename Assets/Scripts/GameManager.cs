@@ -55,4 +55,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("exit");
         Application.Quit();
     }
+
+    public void EndScene()
+    {
+        SceneManager.LoadScene("EndScene");
+    }
 }
