@@ -90,10 +90,7 @@ public class EggController : MonoBehaviour
 			portalTimer.value = currTime / maxTime; //new
 			if (currTime <= 0)
 			{
-				countdown = false;
-				portalTimer.gameObject.SetActive(false); //new
-				transform.Rotate(180, 0, 0, Space.Self);
-				m_Rigidbody2D.gravityScale *= -1;
+				SwitchSides();
 				Die();
 			}
 		}
@@ -119,6 +116,19 @@ public class EggController : MonoBehaviour
 		bool show_timer = portalTimer.gameObject.activeSelf; //new
 		portalTimer.gameObject.SetActive(!show_timer); //new
 	}
+
+	public bool CheckCountdown()
+	{
+		return countdown;
+	}
+
+    public void SwitchSides()
+    {
+		countdown = false;
+		portalTimer.gameObject.SetActive(false);
+		transform.Rotate(180, 0, 0, Space.Self);
+		m_Rigidbody2D.gravityScale *= -1;
+	}
 	#endregion
 
 	#region health_functions
@@ -128,6 +138,10 @@ public class EggController : MonoBehaviour
 		hpSlider.value = currHealth / maxHealth;
 		if (currHealth <= 0)
 		{
+			if (countdown)
+			{
+				SwitchSides();
+			}
 			Die();
 		}
 	}
