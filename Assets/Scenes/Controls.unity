@@ -422,7 +422,9 @@ MonoBehaviour:
 
     UP - FOX JUMP
 
-    FORWARD SLASH (/) - FOX ATTACK'
+    FORWARD SLASH (/) - FOX ATTACK
+
+    M - EXIT GAME TO MENU'
 --- !u!222 &831652093
 CanvasRenderer:
   m_ObjectHideFlags: 0
