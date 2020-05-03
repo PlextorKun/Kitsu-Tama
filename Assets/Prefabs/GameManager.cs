@@ -31,6 +31,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("World");
     }
 
+    public void ShowLore()
+    {
+        Debug.Log("Lore screen");
+        SceneManager.LoadScene("Lore");
+    }
+
     public void ShowControls()
     {
         Debug.Log("controls scene");

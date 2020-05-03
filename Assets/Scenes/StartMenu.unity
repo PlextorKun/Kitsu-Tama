@@ -1258,7 +1258,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1378416914235039931, guid: 4abc9e09590e320419e5c7ceaf017dca,
           type: 3}
-        m_MethodName: PlayGame
+        m_MethodName: ShowLore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
