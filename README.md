@@ -6,6 +6,7 @@ However, dark spirits are rising; as chaos grows in power, the evil witch Grimmh
 
 Explore the cryptic puzzles placed within the mirror dimensions and use the friendly witch Glenda's portals to travel back and forth to fight your way to Grimmhilda. But be warned! Many dark enemies are rising from the nether, and Grimmhilda's curse prevents the two from allying together for too long...
 
+Play at https://chobrandon.itch.io/kitsu-tama
 
 Built by Sambodh Mitra, Jocelyn Chen, Brandon Cho, and Aaron Lin
 Game built using Unity and C#. All assets are original.
